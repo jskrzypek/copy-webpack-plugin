@@ -222,7 +222,7 @@ export default (patterns = [], options = {}) => {
 
                 writeFilePromises.push(fs.mkdirsAsync(path.dirname(absOutputPath))
                     .then(() => {
-                        return fs.writeFileAsync(absOutputPath, asset.source());
+                        return fs.writeFileAsync(absOutputPath, asset.source(), {mode:asset.mode()});
                     }));
             });
 

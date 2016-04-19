@@ -25,6 +25,9 @@ export default (opts) => {
         }
 
         compilation.assets[relFileDest] = {
+            mode () {
+                return stat.mode;
+            },
             size () {
                 return stat.size;
             },
